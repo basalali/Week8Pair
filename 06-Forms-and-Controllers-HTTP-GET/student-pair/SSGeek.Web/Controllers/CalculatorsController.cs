@@ -45,6 +45,19 @@ namespace SSGeek.Web.Controllers
             return View(model);
         }
 
+        public ActionResult AlienTravel()
+        {
+            AlienTravelModel alienTravel = new AlienTravelModel();
+            return View(alienTravel);
+        }
+
+        public ActionResult AlienTravelResult(AlienTravelModel model)
+        {
+            return View(model);
+        }
+
+
+
         private List<SelectListItem> planets = new List<SelectListItem>()
         {
             new SelectListItem() { Text = "Mercury" },

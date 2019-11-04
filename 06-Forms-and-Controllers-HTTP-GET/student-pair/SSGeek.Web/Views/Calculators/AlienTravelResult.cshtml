@@ -1,0 +1,10 @@
+﻿@model AlienTravelModel
+@{
+    ViewData["Title"] = "AlienTravelResult";
+}
+
+
+<section id="calculatorResult" class="centeredPanel">
+    <span><img style="width: 170px;" src="~/images/@(Model.Planet).jpg" /></span>
+    <div style="font-weight: 600; font-size: 25px;"> Traveling by @Model.Mode you will reach @Model.Planet in @Model.GetYears().ToString("0.00") years, You will be @((Model.GetYears() + Model.Age).ToString("0.00")) years old. </div>
+</section>
