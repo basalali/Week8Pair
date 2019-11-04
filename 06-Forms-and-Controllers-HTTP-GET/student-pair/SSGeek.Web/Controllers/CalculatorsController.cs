@@ -33,6 +33,18 @@ namespace SSGeek.Web.Controllers
         }
  
 
+        public ActionResult AlienAge()
+        {
+            AlienAgeModel ageResult = new AlienAgeModel();
+            return View(ageResult);
+        }
+
+
+        public ActionResult AlienAgeResult(AlienAgeModel model)
+        {
+            return View(model);
+        }
+
         private List<SelectListItem> planets = new List<SelectListItem>()
         {
             new SelectListItem() { Text = "Mercury" },

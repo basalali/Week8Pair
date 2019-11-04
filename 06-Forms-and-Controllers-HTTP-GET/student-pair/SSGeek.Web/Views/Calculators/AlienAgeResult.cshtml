@@ -1,0 +1,11 @@
+﻿@model AlienAgeModel
+@{
+    ViewData["Title"] = "AlienAgeResult";
+}
+
+
+<section id="calculatorResult" class="centeredPanel">
+    <span><img style="width: 170px;" src="~/images/@(Model.Planets).jpg" /></span>
+    <div style="font-weight: 600; font-size: 25px;"> If you are @Model.Age years old on Planet Earth, then you are @Model.CalculateAge(Model.Age).ToString("0.00")  @Model.Planets years old. </div>
+</section>
+

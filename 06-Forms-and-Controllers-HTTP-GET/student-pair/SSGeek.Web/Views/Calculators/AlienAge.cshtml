@@ -1,0 +1,26 @@
+﻿@model AlienAgeModel
+@{
+    ViewData["Title"] = "AlienAge";
+}
+
+<section class="centeredPanel">
+    <h1 style="text-align:center; font-weight: 600;">Alien Age Calculator</h1> <br />
+    <form action="AlienAgeResult" method="get">
+        <span style="font-weight: 500"> Choose a planet</span>
+        <select name="Planets">
+            <option value="Saturn">Saturn</option>
+            <option value="Jupiter">Jupiter</option>
+            <option value="Mars">Mars</option>
+            <option value="Neptune">Neptune</option>
+            <option value="Venus">Venus</option>
+            <option value="Mercury">Mercury</option>
+            <option value="Uranus">Uranus</option>
+        </select>
+        <br />
+        <span style="font-weight: 500"> Enter your Earth age</span>
+        <input type="text" name="Age" /> <br />
+        <input type="submit" value="Calculate Age" />
+    </form>
+
+
+</section>
