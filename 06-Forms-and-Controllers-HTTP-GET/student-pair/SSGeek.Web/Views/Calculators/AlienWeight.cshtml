@@ -1,9 +1,26 @@
-﻿
+﻿@model AlienWeightModel
 @{
     ViewData["Title"] = "Alien Weight";
 }
 
 <section class="centeredPanel">
-
+    <h1 style="text-align:center; font-weight: 600;">Alien Weight Calculator</h1> <br />
+    <form action="AlienWeightResult" method="get">
+        <span style="font-weight: 500"> Choose a planet</span>
+        <select name="planets">
+            <option value="Saturn">Saturn</option>
+            <option value="Jupiter">Jupiter</option>
+            <option value="Mars">Mars</option>
+            <option value="Neptune">Neptune</option>
+            <option value="Venus">Venus</option>
+            <option value="Mercury">Mercury</option>
+            <option value="Uranus">Uranus</option>
+        </select>
+        <br />
+        <span style="font-weight: 500"> Enter your Earth Weight</span>
+        <input type ="text" name="weightLbs" /> <br />
+        <input type ="submit" value="Calculate Weight" />
+    </form>
+    
 
 </section>

@@ -1,11 +1,14 @@
-﻿
+﻿@model AlienWeightModel
 
 @{
     ViewData["Title"] = "Alien Weight Result";
+
+
 }
 
 
 <section id="calculatorResult" class="centeredPanel">
-
-
+    <span><img style="width: 170px;" src="~/images/@(Model.planets).jpg"/></span>
+    <div style="font-weight: 600; font-size: 25px;"> If you are @Model.weightLbs lbs on Planet Earth, you would weigh @Model.CalculateWeight(Model.weightLbs) lbs on @Model.planets. </div>
 </section>
+

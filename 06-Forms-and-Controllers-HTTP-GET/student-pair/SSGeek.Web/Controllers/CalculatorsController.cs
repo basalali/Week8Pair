@@ -10,6 +10,8 @@ namespace SSGeek.Web.Controllers
 {
     public class CalculatorsController : Controller
     {
+
+       
         // INSTRUCTIONS
         // As a part of each exercise you will need to 
         // - develop a view for AlienAge, AlienWeight, and AlienTravel that displays a form to submit data
@@ -20,7 +22,8 @@ namespace SSGeek.Web.Controllers
         // GET: Calculators/AlienWeight
         public ActionResult AlienWeight()
         {
-            return View();
+            AlienWeightModel alienWeight = new AlienWeightModel();
+            return View(alienWeight);
         }
 
         // GET: calcualtors/alienweightresult?planet=xyz&weight=123
@@ -28,8 +31,7 @@ namespace SSGeek.Web.Controllers
         {
             return View(model);
         }
-
-        
+ 
 
         private List<SelectListItem> planets = new List<SelectListItem>()
         {
