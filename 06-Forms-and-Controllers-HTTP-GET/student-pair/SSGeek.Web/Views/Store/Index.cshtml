@@ -1,0 +1,22 @@
+﻿@model IEnumerable<SSGeek.Web.Models.Product>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div style="background-color:white;">
+    <h2 style="text-align:center; font-size: 25px; font-weight:600">Solar System Geek Gift Shop</h2>
+    @foreach(Product item in Model)
+    {
+      <a asp-action="Detail" asp-route-id="@item.Id"> <img style="width: 20%" src="~/images/@item.ImageName" /></a>
+     <span style="font-weight:600; font-size: 18px">@item.Name</span> <span style="font-weight:600; font-size: 18px; color:cornflowerblue;">$@item.Price</span>
+      <br />
+      <br />
+    }
+
+
+    <br /><br /><br /><br />
+</div>
+
+
+

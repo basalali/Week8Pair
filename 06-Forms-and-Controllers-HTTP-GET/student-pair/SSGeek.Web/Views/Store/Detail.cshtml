@@ -1,0 +1,59 @@
+﻿@model Product
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<div style="background-color:white;">
+
+    <h2 style="text-align:center; font-size: 25px; font-weight:600">Solar System Geek Gift Shop</h2><br />
+    <br />
+    <br />
+    <img style="width: 250px; margin-top: 40px;" src="~/images/@Model.ImageName" />
+    <div style="display: inline-block; margin-left: 70px; margin-top: -200px;">
+        <dl class="dl-horizontal">
+            <dd style="font-size: 25px; font-weight:600 ">
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+            <br />
+            <dd style="font-weight:600; font-size: 18px; color:cornflowerblue;" >
+                $@Html.DisplayFor(model => model.Price)
+            </dd>
+            <br />
+            <dd>
+                @Html.DisplayFor(model => model.Description)
+            </dd>
+            <br />
+            <br />
+            <dd>
+                <form asp-action="AddToCart" method="get">
+                    Quantity to buy
+                    <input type="text" asp-for="@Model.Quantity" />
+                    <input type="hidden" asp-for="@Model.Id" />
+                    <input type="hidden" asp-for="@Model.ImageName" />
+                    <input type="hidden" asp-for="@Model.Name" />
+                    <input type="hidden" asp-for="@Model.Price" />
+
+
+                    <span> <input class="btn btn-success" type="submit" value="Add To Cart" /></span>
+
+
+                </form>
+            </dd>
+        </dl>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <br /><br /><br />
+</div>
+

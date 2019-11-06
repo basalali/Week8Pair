@@ -1,0 +1,69 @@
+﻿@model ShoppingCart
+
+@{
+    ViewData["Title"] = "AddToCart";
+}
+
+
+
+<div style="background-color:white;">
+    <h2 style="text-align:center; font-weight:600">Solar System Geek Gift Shop</h2>
+    <table class="table">
+        <thead>
+            <tr>
+
+                <th>
+                    <div style="color:black;"></div>
+                </th>
+
+                <th>
+                    <div style="color:black;">Name</div>
+                </th>
+                <th>
+                    <div style="color:black;">Price</div>
+                </th>
+                <th>
+                    <div style="color:black;">Qty.</div>
+                </th>
+                <th>
+                    <div style="color:black;">Total</div>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Items)
+            {
+            <tr>
+
+                <td>
+                    <img style="width: 10%;" src="~/images/@item.Product.ImageName" /><br />
+                </td>
+                <td>
+                    <div style="color:black;"> @item.Product.Name</div>
+                </td>
+                <td>
+                    <div style="color:black;"> @item.Product.Price</div>
+                </td>
+                <td>
+                    <div style="color:black;"> @item.Product.Quantity</div>
+                </td>
+                <td>
+                    <div style="color:black;"> @((item.Product.Quantity * item.Product.Price).ToString("c"))</div>
+                </td>
+            </tr>
+            }
+            <tr>
+                <td>
+                    <div style="color:black; font-weight: 600; text-align:right"> Grand Total: $@Model.GrandTotal</div>
+                </td>
+                <td>
+                    <div style="color:black; font-weight: 600; text-align:right"> <a asp-action="" class="btn btn-success">Check Out!</a> </div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+   
