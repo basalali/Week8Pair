@@ -1,0 +1,19 @@
+﻿@model IEnumerable<SSGeek.Web.Models.ForumPost>
+@{
+    ViewData["Title"] = "Index";
+}
+<div style="background-color: white;">
+    <h2 style="font-weight: 600; font-size: 20px; text-align:center;"> Solar System Geek Forum</h2>
+    <a asp-action="NewPost"><h3 style="text-align: center; font-size: 15px;">Post A Message</h3> </a>
+    @foreach (var item in Model)
+    {
+
+        <div style="font-weight: 600; font-size: 16px;">@item.Subject </div>
+        <div style="font-size: 14px;"> by @item.UserName on @item.PostDate </div>
+        @item.Message <br /> 
+        <br />
+    }
+
+    <br /><br /><br />
+
+</div>

@@ -27,7 +27,7 @@ namespace SSGeek.Web.DAL
                 {
                     conn.Open();
 
-                    string sql = @"SELECT * FROM forum_post";
+                    string sql = "SELECT * FROM forum_post";
                     SqlCommand cmd = new SqlCommand(sql, conn);
 
                     SqlDataReader reader = cmd.ExecuteReader();
@@ -69,16 +69,19 @@ namespace SSGeek.Web.DAL
 
                     conn.Open();
 
-                    string sql = @"INSERT INTO forum_post (username, subject, message) VALUES (@username, @subject, @message);";
+                    string sql = "INSERT INTO forum_post (username, subject, message) VALUES (@username, @subject, @message);";
                     SqlCommand cmd = new SqlCommand(sql, conn);
                     cmd.Parameters.AddWithValue(@"username", post.UserName);
                     cmd.Parameters.AddWithValue(@"subject", post.Subject);
                     cmd.Parameters.AddWithValue(@"message", post.Message);
 
-                    cmd.ExecuteNonQuery();
-
+                    if(cmd.ExecuteNonQuery() > 0)
+                    {
+                        result = true;
+                    }
+                   
                 }
-                return result;
+
             }
 
             catch (SqlException ex)
@@ -87,6 +90,7 @@ namespace SSGeek.Web.DAL
                 throw ex;
             }
 
+            return result;
         }
     }
 }

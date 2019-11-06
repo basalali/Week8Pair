@@ -1,0 +1,26 @@
+﻿
+@model SSGeek.Web.Models.ForumPost
+
+@{
+    ViewData["Title"] = "NewPost";
+}
+<div style="background-color: white;">
+
+
+    <h2 style="font-weight: 600; font-size: 20px; text-align:center;">Solar System Geek Forum</h2>
+
+    <form asp-action="NewPost" method="post">
+        Username:
+        <input type="text" name="Username" /> <br /><br />
+        Subject:
+        <input type="text" name="Subject" /><br /><br />
+        Message:
+        <input type="text" name="Message" />
+        <input type="submit" value="Submit!">
+
+        <br /><br /><br /><br /><br />
+    </form>
+
+
+
+</div>
