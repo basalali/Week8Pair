@@ -10,6 +10,14 @@
     <h2 style="font-weight: 600; font-size: 20px; text-align:center;">Solar System Geek Forum</h2>
 
     <form asp-action="NewPost" method="post">
+
+        <div asp-validation-summary="All" style="color: red">
+
+
+
+        </div>
+
+
         Username:
         <input type="text" name="Username" /> <br /><br />
         Subject:

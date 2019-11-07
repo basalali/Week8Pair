@@ -36,6 +36,12 @@ namespace SSGeek.Web.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult NewPost(ForumPost post)
         {
+
+            if(!ModelState.IsValid)
+            {
+                return View("NewPost", post);
+
+            }
             forumPostDAO.SaveNewPost(post);
 
             return RedirectToAction("Index");
